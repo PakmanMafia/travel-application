@@ -1,2 +1,3 @@
-# travel-application
-Simple Application for deciding roommates and destinations
+# travel-site
+
+Branch containing all things regarded the unintegrated front-end of the site.
