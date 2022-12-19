@@ -1,6 +1,3 @@
-# travel-application
-Simple Application for deciding roommates and destinations
-
 ## Basic CLI Commands and other necessities
 ### Dependencies
 - [git](https://git-scm.com/)
@@ -68,4 +65,3 @@ This command commits a set of files to the branch so that it can be added to the
 git push [remote name, default = origin] [branch]
 ```
 This pushes the committed files into the repository. This commands requires a remote, however, when cloning a repositiory a remote named `origin` is automatically created, and should therefore be used. Additionally, a branch should be specified, it goes without saying that you should never push directly into `master` without knowing what you are doing. The proper procedure is to create a pull request within another branch to merge with master.
-
