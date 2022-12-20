@@ -1,0 +1,17 @@
+.marques-sundar-thumbnail {
+	width: 300px;
+}
+
+.search-bar {
+	font-size: 20px;
+	margin-left: 12px;
+}
+
+.video-title {
+	width: 300px;
+}
+
+.video-author,
+.video-stats {
+	display: inline-block;
+}
