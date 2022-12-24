@@ -1,33 +1,7 @@
 import './style.css'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import gsap from 'gsap'
-import * as lil from 'lil-gui'
 
-/**
- * Debug
- */
-const gui = new lil.GUI()
-
-const spinObject = {
-    spin: () => {
-        // console.log('spin');
-        gsap.to(mesh.rotation, { duration: 1, y: mesh.rotation.y + (Math.PI * 2) })
-    }
-}
-
-gui
-    .add(spinObject, 'spin')
-
-// Disable Debug Panel
-window.addEventListener('keydown', (e) => {
-    if (e.key == "h") {
-        if (gui._hidden)
-            gui.show()
-        else
-            gui.hide()
-    }
-})
 /**
  * Base
  */
@@ -45,24 +19,6 @@ const material = new THREE.MeshBasicMaterial({ color: 0xff0000 })
 const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh)
 
-// Debug
-gui
-    .add(mesh.position, 'y')
-    .min(-3)
-    .max(3)
-    .step(0.01)
-    .name('Translate Y')
-
-gui
-    .add(mesh, 'visible')
-    .name('Mesh Visibility')
-gui
-    .add(material, 'wireframe')
-    .name('Mesh Wireframe')
-
-gui
-    .addColor(material, 'color')
-    .name('Mesh Color')
 /**
  * Sizes
  */
@@ -71,7 +27,8 @@ const sizes = {
     height: window.innerHeight
 }
 
-window.addEventListener('resize', () => {
+window.addEventListener('resize', () =>
+{
     // Update sizes
     sizes.width = window.innerWidth
     sizes.height = window.innerHeight
@@ -90,7 +47,9 @@ window.addEventListener('resize', () => {
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-camera.position.z = 3
+camera.position.x = 1
+camera.position.y = 1
+camera.position.z = 1
 scene.add(camera)
 
 // Controls
@@ -111,7 +70,8 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
  */
 const clock = new THREE.Clock()
 
-const tick = () => {
+const tick = () =>
+{
     const elapsedTime = clock.getElapsedTime()
 
     // Update controls
